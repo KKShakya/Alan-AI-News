@@ -6,14 +6,13 @@ import NewsCards from './components/NewsCards/NewsCards';
 const alkey = '087e478bcd4ce101de98cdec1ab953892e956eca572e1d8b807a3e2338fdd0dc/stage'
 const App = () => {
 
-    const [newsArticles,setNewsArticles] = useState([])
-;
+    const [newsArticles,setNewsArticles] = useState([]);
     useEffect(() => { 
         albtn({
           key:alkey,
           onCommand:({command,articles}) =>{
               if(command === 'newHeadLines'){
-                  console.log(articles);
+                setNewsArticles(articles);
               }
           }
         })
